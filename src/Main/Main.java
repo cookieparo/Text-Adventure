@@ -78,6 +78,7 @@ public class Main {
                 System.out.println("Du findest ein Schwert!\n.               [\n.          @XXXX[{::::::::::::::::::::::::>\n.               [. ");
                 Thread.sleep(1000);
                 System.out.println("\n//Schwert erhalten.//\n");
+                //Schaden des Schwertes wird zum normalen Schaden addiert
                 Spieler.Kampferstellung(SpielerName, 500, 5 + Schwert.Schaden);
                 Thread.sleep(1500);
                 System.out.println("Möchtest du weitersuchen? *Ja* *Nein*\n>");
@@ -106,7 +107,7 @@ public class Main {
                 System.out.println(".           _______");
                 System.out.println(".        _-|  	   |-_");
                 System.out.println(".       |    ______   |");
-                System.out.println(".       |   |_ O _|   |");
+                System.out.println(".       |   |______|   |");
                 System.out.println(".       |             |");
                 System.out.println(".        |_         _|");
                 System.out.println(".          |_______|");
@@ -157,7 +158,7 @@ public class Main {
                     System.out.println("  Viel Glück und pass auf dich auf!");
                     Thread.sleep(2000);
 
-                    HeiltrankAnzahl += 1; //Inventar für den Heiltrank
+                    HeiltrankAnzahl += 1; //Inventar für den Heiltrank (+1)
 
                     System.out.println("Möchtest du noch mit deinem *Vater reden* oder *aus dem Haus gehen*?");
                     Antwort5 = input.nextLine();
@@ -190,7 +191,7 @@ public class Main {
                 }
 
 
-
+                //Außerhalb des Hauses
                 if (Antwort4.equals("aus dem Haus gehen")||Antwort5.equals("aus dem Haus gehen")) {
                     System.out.println("Du gehst aus dem Haus...");
                     Thread.sleep(2000);
@@ -205,6 +206,7 @@ public class Main {
                     System.out.println("Du rennst zum Monster und greifst es an.");
                     Thread.sleep(2000);
 
+                    //Schaden, der direkt am Anfang am Gegner gemacht wird
                     VariableFürKampf.Gesamtleben -= Spieler.Schaden;
                     System.out.println("Du machst ihm direkt " + Spieler.Schaden + " Schaden.");
                     Thread.sleep(3500);
@@ -242,6 +244,7 @@ public class Main {
                     int Körperteil = 0;
                     int Item = 0;
 
+                    //Auswahlmöglichkeiten für den Kampf
                     if (Angriff == 1) {
                         System.out.println("Welches Körperteil möchtest du angreifen?\n1) Kopf\n2) Torso\n3) Beine\n>");
                         Körperteil = input.nextInt();
@@ -275,6 +278,7 @@ public class Main {
 
 
                     }
+                    //Überprüfung, ob Gegner tot ist (Mit allen Endings)
                     if (VariableFürKampf.Gesamtleben <= 0 && Ende2Vatertot) {
                         System.out.println("Gewonnen!");
                         Thread.sleep(3000);
@@ -290,8 +294,10 @@ public class Main {
                          break;
                     }
 
+                    //Angriff des Gegners
                     Spieler.Leben -= VariableFürKampf.Schadenf;
                     System.out.println(VariableFürKampf.Gegnername + " fügt " + Spieler.Name + " " + VariableFürKampf.Schadenf + " Schaden zu. " + Spieler.Name + " hat noch " + Spieler.Leben + " Lebenspunkte.\n");
+                    //
 
                     if (Spieler.Leben <= 0) {
                         Thread.sleep(1500);
