@@ -117,7 +117,7 @@ public class Main {
                 Thread.sleep(2500);
                 System.out.println("Du ziehst ihn an und machst jetzt " + Spieler.Schaden + " Schaden.");
                 Thread.sleep(2500);
-                System.out.println("Du kannst jetzt ins *Wohnzimmer gehen*.");
+                System.out.println("Du kannst jetzt ins *Wohnzimmer gehen*.\n>");
                 ZwischenAntwort1 = input.nextLine();
 
 
@@ -228,7 +228,7 @@ public class Main {
 
                 }
                 if (Antwort6gurke || Antwort5.equals("Vater reden")) {
-                    System.out.println("///////////////////////////////\nDER KAMPF BEGINNT\n///////////////////////////////");
+                    System.out.println("///////////////////////////////\nDER KAMPF BEGINNT\n///////////////////////////////\n");
                     Thread.sleep(1500);
                 }
                     //Kampf
@@ -291,7 +291,7 @@ public class Main {
                     }
 
                     Spieler.Leben -= VariableFürKampf.Schadenf;
-                    System.out.println(VariableFürKampf.Gegnername + " fügt " + Spieler.Name + " " + VariableFürKampf.Schadenf + " Schaden zu. " + Spieler.Name + " hat noch " + Spieler.Leben + " Lebenspunkte.");
+                    System.out.println(VariableFürKampf.Gegnername + " fügt " + Spieler.Name + " " + VariableFürKampf.Schadenf + " Schaden zu. " + Spieler.Name + " hat noch " + Spieler.Leben + " Lebenspunkte.\n");
 
                     if (Spieler.Leben <= 0) {
                         Thread.sleep(1500);
